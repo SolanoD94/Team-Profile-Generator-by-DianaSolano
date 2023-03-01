@@ -1,11 +1,10 @@
 const fs = require('fs');
 const inquirer = require('inquirer');
-
 const manager = require('./lib/manager');
 const engineer = require('./lib/engineer');
 const intern = require('./lib/intern');
 
-const frontEnd = require('./dist/template')
+const frontEnd = require('./template');
 
 // Array of answers
 const theCrew = [];
@@ -113,9 +112,10 @@ startAsking();
 
 // Function to Generate HTML with Team Profile
 function createTeam(){
+    console.log(`Creating your team...`);
+    console.log(`Go to results folder`);
     console.log(theCrew);
-
-    fs.writeFile('./results/index.html', frontEnd(theCrew), (err) =>
+    fs.writeFile('./results/Profile.html', frontEnd(theCrew), (err) =>
     err ? console.error(err) : console.log('Success! New Team Profile Created!')
     )
 }
