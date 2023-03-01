@@ -113,7 +113,7 @@ startAsking();
 // Function to Generate HTML with Team Profile
 function createTeam(){
     console.log(`Creating your team...`);
-    console.log(`Go to results folder`);
+    console.log(`Go to Results folder, see Profile.html`);
     console.log(theCrew);
     fs.writeFile('./results/Profile.html', frontEnd(theCrew), (err) =>
     err ? console.error(err) : console.log('Success! New Team Profile Created!')
